@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <h2 class="logo">JS</h2>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="page">
+        <div class="contact-minimalist">
+            <h1 class="section-header">Contact Me</h1>
+            <a href="mailto:jaweriasarfraz30@gmail.com" class="contact-email-link">jaweriasarfraz30@gmail.com</a>
+            <form class="minimal-form">
+                <div class="form-field">
+                    <input type="text" id="name" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-field full-width">
+                    <textarea id="message" rows="1" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <div class="submit-btn-container">
+                    <button type="submit" class="round-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

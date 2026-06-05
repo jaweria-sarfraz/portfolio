@@ -1,0 +1,253 @@
+/* 1. Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1a1a1a;
+    color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 2. Navbar Styles - Enhanced */
+.navbar {
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.logo { color: #00c3ff; font-size: 1.7rem; font-weight: bold; }
+.menu { display: flex; gap: 35px; }
+.menu a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.menu a:hover, .menu a.active { color: #00c3ff; }
+
+/* 3. Hero Section (Home) */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8%;
+}
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 80px;
+}
+.hero-text h1 { font-size: 3.5rem; margin-bottom: 10px; }
+.hero-image img {
+    width: 450px;
+    height: 350px;
+    border-radius: 15%; 
+    border: 8px solid #222;
+    box-shadow: 0 0 20px #00c3ff;
+    object-fit: cover;
+}
+
+/* 4. Common Page Layout */
+.page {
+    padding: 120px 8% 80px;
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.section-header { text-align: center; margin-bottom: 40px; }
+.highlight { color: #00c3ff; }
+.underline {
+    width: 70px; height: 4px;
+    background: #00c3ff;
+    margin: 10px auto;
+}
+
+/* 5. Skills Progress Bars */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; 
+    width: 100%; 
+    max-width: 1100px;
+}
+.skill-box { padding: 10px; }
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; }
+.progress-bar { background: #333; height: 10px; border-radius: 10px; overflow: hidden; }
+
+.progress { 
+    background: #00c3ff; 
+    height: 100%; 
+    box-shadow: 0 0 10px #00c3ff; 
+    width: 0; 
+    animation: fillBars 1.5s ease-in-out forwards;
+}
+
+@keyframes fillBars {
+    from { width: 0; }
+    to { width: var(--target-width); }
+}
+
+/* 6. Projects Grid - Theek Kiya Gaya Spacing aur Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px; 
+    width: 100%; 
+    max-width: 1100px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: #222;
+    border-radius: 12px;
+    border-bottom: 4px solid #00c3ff;
+    transition: 0.3s;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover { transform: translateY(-10px); }
+
+/* Screenshot fitting area */
+.project-img {
+    width: 100%;
+    height: 220px; 
+    overflow: hidden;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    /* Is se image properly center mein fit hogi aur stretch nahi karegi */
+    object-fit: contain; 
+    transition: 0.3s;
+}
+
+.project-info { padding: 20px; }
+.project-info h3 { font-size: 1.1rem; margin-bottom: 8px; color: #00c3ff; }
+.project-info p { font-size: 0.85rem; color: #ccc; }
+
+.project-tags { margin: 10px 0; }
+.project-tags span {
+    background: #333;
+    color: #00c3ff;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.btn-small {
+    margin-top: 10px;
+    display: inline-block;
+    color: #00c3ff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #00c3ff;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+/* 7. Minimalist Contact */
+.contact-minimalist { text-align: center; max-width: 800px; width: 100%; }
+.contact-email-link {
+    font-size: 2.5rem; color: #00c3ff;
+    text-decoration: none; font-weight: 700;
+    display: block; margin: 30px 0;
+}
+.minimal-form {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px; text-align: left;
+}
+.form-field { position: relative; border-bottom: 2px solid #333; padding: 10px 0; }
+.full-width { grid-column: span 2; }
+.form-field input, .form-field textarea {
+    width: 100%; background: transparent; border: none;
+    color: white; font-size: 1.1rem; outline: none; padding-top: 20px;
+}
+.form-field label {
+    position: absolute; left: 0; top: 25px;
+    color: #777; transition: 0.3s ease; pointer-events: none;
+}
+.form-field input:focus ~ label, .form-field input:valid ~ label,
+.form-field textarea:focus ~ label, .form-field textarea:valid ~ label {
+    top: -5px; font-size: 0.85rem; color: #00c3ff;
+}
+
+/* 8. Buttons - Spacing fix */
+.btn, .round-btn {
+    background: #00c3ff; color: #111;
+    padding: 12px 30px; border-radius: 5px;
+    text-decoration: none; font-weight: bold;
+    display: inline-block; cursor: pointer; border: none;
+    margin-top: 25px; /* Spacing fix for About section */
+    transition: 0.3s;
+}
+.round-btn { border-radius: 50px; background: transparent; border: 2px solid #00c3ff; color: #00c3ff; }
+.round-btn:hover { background: #00c3ff; color: #111; }
+
+/* 9. About Page */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 40px;
+}
+
+.about-intro-large {
+    flex: 1;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    border-left: 5px solid #00c3ff; 
+    padding-left: 20px;
+}
+
+.about-text { flex: 1.2; text-align: left; }
+.personal-details-info { margin-top: 20px; }
+.personal-details-info ul { list-style: none; padding: 0; }
+.personal-details-info li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.personal-details-info strong { color: #00c3ff; min-width: 100px; }
+
+/* Responsive Styles */
+@media (max-width: 850px) {
+    .about-content { flex-direction: column; gap: 40px; }
+    .about-intro-large { font-size: 2rem; border-left: none; border-bottom: 3px solid #00c3ff; padding: 0 0 10px; }
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-image img { width: 300px; height: 250px; margin-top: 30px; }
+    .minimal-form { grid-template-columns: 1fr; }
+}
